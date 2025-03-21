@@ -211,9 +211,13 @@ if (enable_temperate) {
 }
 
 spritelayout sprite_large_office_block_1 {
-    ground	 	{sprite: 1420; }
-     building 	{
+    ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
+    building 	{
         sprite: construction_state==0 ? 1440 : construction_state !=3 ? 1441 : terrain_type != TILETYPE_SNOW ? 1442 : 4569;
+    }
+    childsprite {
+        sprite: 1444;
+        hide_sprite: construction_state != 3;
     }
 }
 
@@ -221,7 +225,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_large_office_block_1, 4) {
         property {
             substitute: 0x04;
-            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // lift would need creating a cdustom animation duplicate
+//            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // lift would need creating a custom animation duplicate, might just attempt childspriting it after I figure out how animations actually work
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -322,31 +326,16 @@ if (enable_temperate) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
             }
         }
-        if (!additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (!cargotype_available("TOUR") || hotel_tourist != 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
             }
         }
-        if (!additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist == 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
-                cargo_production: hotel_tourist_production;
-            }
-        }
-        if (additional_colors && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
-            graphics {
-                graphics_north: sprite_temperate_hotel_N;
-                graphics_east: sprite_temperate_hotel_E;
-                colour: random_struct_color();
-            }
-        }
-        if (additional_colors && cargotype_available("TOUR") && hotel_tourist == 2) {
-            graphics {
-                graphics_north: sprite_temperate_hotel_N;
-                graphics_east: sprite_temperate_hotel_E;
-                colour: random_struct_color();
                 cargo_production: hotel_tourist_production;
             }
         }
@@ -1068,8 +1057,6 @@ spritelayout sprite_houses_3 {
     ground	 	{sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED : terrain_type != TILETYPE_SNOW ? 4418 : 4419; }
      building 	{
         sprite: construction_state==0 ? 4424 : construction_state==1 ? 4425 : terrain_type != TILETYPE_SNOW ? 4426 : 4427;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -1385,7 +1372,7 @@ spritelayout sprite_arctic_hotel_N {
 spritelayout sprite_arctic_hotel_E {
     ground	 	{ sprite: construction_state != 0 ? GROUNDSPRITE_CLEARED : 4472; }
     building 	{
-        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4474 : terrain_type != TILETYPE_SNOW ? 4475 : 4584;
+        sprite: construction_state==0 ? 0 : construction_state == 1 ? 4474 : terrain_type != TILETYPE_SNOW ? 4476 : 4584;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
