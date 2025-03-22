@@ -107,7 +107,7 @@ grf {
             name: string(STR_PARAM_NAME_HOTEL_TOURIST);
             desc: string(STR_PARAM_DESC_HOTEL_TOURIST);
             min_value: 0;
-            max_value: 2;
+            max_value: 3;
             def_value: 0;
             names: {
                 0: string(STR_PARAM_HOTEL_TOURIST_NO);
@@ -438,7 +438,7 @@ if (enable_temperate) {
                 local_authority_impact: 65500;
             }
         }
-        if (!cargotype_available("TOUR") || hotel_tourist != 2) {
+        if (!cargotype_available("TOUR") || hotel_tourist < 2) {
             graphics {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
