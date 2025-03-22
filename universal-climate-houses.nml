@@ -112,7 +112,8 @@ grf {
             names: {
                 0: string(STR_PARAM_HOTEL_TOURIST_NO);
                 1: string(STR_PARAM_HOTEL_TOURIST_ACCEPT);
-                2: string(STR_PARAM_HOTEL_TOURIST_PRODUCE);
+                2: string(STR_PARAM_HOTEL_TOURIST_PRODUCE_UNIQUE);
+                3: string(STR_PARAM_HOTEL_TOURIST_PRODUCE);
             };
         }
     }
@@ -401,8 +402,6 @@ spritelayout sprite_temperate_hotel_N {
     ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
     building 	{
         sprite: construction_state==0 ? 1448 : construction_state != 3 ? 1449 : 1450;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -410,8 +409,6 @@ spritelayout sprite_temperate_hotel_E {
     ground	 	{ sprite: construction_state==3 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED; }
     building 	{
         sprite: construction_state==0 ? 1451 : construction_state != 3 ? 1452 : 1453;
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
     }
 }
 
@@ -434,10 +431,11 @@ if (enable_temperate) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
+                local_authority_impact: 65500;
             }
         }
         if (!cargotype_available("TOUR") || hotel_tourist != 2) {
@@ -451,6 +449,16 @@ if (enable_temperate) {
                 graphics_north: sprite_temperate_hotel_N;
                 graphics_east: sprite_temperate_hotel_E;
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+            }
+        }
+        if (cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_temperate_hotel_N;
+                graphics_east: sprite_temperate_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
             }
         }
     }
@@ -1718,13 +1726,14 @@ if (enable_arctic) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
-        if (cargotype_available("TOUR") && hotel_tourist == 2) {
+        if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 6]];
+                local_authority_impact: 65500;
             }
         }
-        if (additional_colors == 0 && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (additional_colors == 0 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
@@ -1735,9 +1744,19 @@ if (enable_arctic) {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
             }
         }
-        if (additional_colors == 1 && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (additional_colors == 0 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+            }
+        }
+        if (additional_colors == 1 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
@@ -1750,9 +1769,20 @@ if (enable_arctic) {
                 graphics_east: sprite_arctic_hotel_E;
                 colour: random_modest_struct_color();
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
             }
         }
-        if (additional_colors == 2 && (!cargotype_available("TOUR") || hotel_tourist != 2)) {
+        if (additional_colors == 1 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_modest_struct_color();
+                cargo_production: hotel_tourist_production;
+                protection: 1;
+            }
+        }
+        if (additional_colors == 2 && (!cargotype_available("TOUR") || hotel_tourist < 2)) {
             graphics {
                 graphics_north: sprite_arctic_hotel_N;
                 graphics_east: sprite_arctic_hotel_E;
@@ -1765,6 +1795,17 @@ if (enable_arctic) {
                 graphics_east: sprite_arctic_hotel_E;
                 colour: random_struct_color();
                 cargo_production: hotel_tourist_production;
+                protection: 1;
+                construction_check: same_house_count_town == 0;
+            }
+        }
+        if (additional_colors == 2 && cargotype_available("TOUR") && hotel_tourist == 3) {
+            graphics {
+                graphics_north: sprite_arctic_hotel_N;
+                graphics_east: sprite_arctic_hotel_E;
+                colour: random_struct_color();
+                cargo_production: hotel_tourist_production;
+                protection: 1;
             }
         }
     }

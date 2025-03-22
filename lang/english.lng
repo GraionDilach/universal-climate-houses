@@ -34,4 +34,5 @@ STR_PARAM_DESC_HOTEL_TOURIST                :This setting requires an external i
 
 STR_PARAM_HOTEL_TOURIST_NO                  :Ignored (vanilla behaviour)
 STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance
-STR_PARAM_HOTEL_TOURIST_PRODUCE             :Full acceptance and production
+STR_PARAM_HOTEL_TOURIST_PRODUCE_UNIQUE      :Full acceptance and production, each hotel type is limited to one per town
+STR_PARAM_HOTEL_TOURIST_PRODUCE             :Full acceptance and production, unlimited count
