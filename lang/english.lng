@@ -10,8 +10,12 @@ STR_PARAM_NAME_ENABLE_ARCTIC                :Enable Arctic houses
 
 STR_PARAM_NAME_ENABLE_TROPIC                :Enable Sub-Tropic houses
 
-STR_PARAM_NAME_ADDITIONAL_COLORS            :Allow more color variations
-STR_PARAM_DESC_ADDITIONAL_COLORS            :When enabled, houses which were already using color variations will attempt to use all the possible color combinations.
+STR_PARAM_NAME_ADDITIONAL_COLORS            :Random color variations
+STR_PARAM_DESC_ADDITIONAL_COLORS            :Choose how random color assignments should behave.
+
+STR_PARAM_ADDITIONAL_COLORS_NONE            :Only vanilla color combinations
+STR_PARAM_ADDITIONAL_COLORS_SENSIBLE        :Sensible (random ranges expanded to include fitting tones)
+STR_PARAM_ADDITIONAL_COLORS_RAINBOW         :Rainbow (random ranges include all possible options)
 
 STR_PARAM_NAME_HOTEL_TOURIST                :Hotel's handling of Tourists
 STR_PARAM_DESC_HOTEL_TOURIST                :This setting requires an external industry NewGRF to define Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
