@@ -320,14 +320,25 @@ spritelayout sprite_large_office_block_1 {
     childsprite {
         sprite: 1443;
         hide_sprite: construction_state != 3;
+        xoffset: 14;
+        yoffset: 42 - animation_frame; // should be 48-24 range when tested statically, but on dynamic that was too much
     }
+}
+
+switch (FEAT_HOUSES, SELF, large_office_block_change_lift, extra_callback_info1 % 12) {
+    return;
+}
+
+switch (FEAT_HOUSES, SELF, large_office_block_construction_check, construction_state) {
+    3: large_office_block_change_lift;
+    return 42;
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_large_office_block_1, 4) {
         property {
             substitute: 0x04;
-//            building_flags: bitmask(HOUSE_FLAG_ANIMATE); // lift would need creating a custom animation duplicate, might just attempt childspriting it after I figure out how animations actually work
+            building_flags: bitmask(HOUSE_FLAG_ANIMATE, HOUSE_FLAG_RANDOM_ANIMATION);
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -335,6 +346,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
         graphics {
             default: sprite_large_office_block_1;
+            anim_control: large_office_block_construction_check;
         }
     }
 }
