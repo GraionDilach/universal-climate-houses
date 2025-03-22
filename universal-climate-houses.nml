@@ -72,6 +72,36 @@ grf {
     }
 
     param 2 {
+        church_limit {
+            type: int;
+            name: string(STR_PARAM_NAME_CHURCH_LIMIT);
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_CHURCH_LIMIT_ONE);
+                1: string(STR_PARAM_CHURCH_LIMIT_EACH);
+                2: string(STR_PARAM_CHURCH_LIMIT_LIMITLESS);
+            };
+        }
+    }
+
+    param 3 {
+        stadium_limit {
+            type: int;
+            name: string(STR_PARAM_NAME_STADIUM_LIMIT);
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            names: {
+                0: string(STR_PARAM_STADIUM_LIMIT_ONE);
+                1: string(STR_PARAM_STADIUM_LIMIT_EACH);
+                2: string(STR_PARAM_STADIUM_LIMIT_LIMITLESS);
+            };
+        }
+    }
+
+    param 4 {
         hotel_tourist {
             type: int;
             name: string(STR_PARAM_NAME_HOTEL_TOURIST);
@@ -251,15 +281,33 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_church_1 {
+    ground { sprite: construction_state==3 ? 1437 : GROUNDSPRITE_CLEARED; }
+    building {
+        sprite: construction_state==0 ? 1434 : construction_state == 1 ? 1435 : 1436;
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+    }
+}
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_church_1, 3) {
         property {
             substitute: 0x03;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0;
+            building_class: 1;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            default: sprite_church_1;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -270,7 +318,7 @@ spritelayout sprite_large_office_block_1 {
         sprite: construction_state==0 ? 1440 : construction_state !=3 ? 1441 : terrain_type != TILETYPE_SNOW ? 1442 : 4569;
     }
     childsprite {
-        sprite: 1444;
+        sprite: 1443;
         hide_sprite: construction_state != 3;
     }
 }
@@ -600,15 +648,64 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_stadium_1_N {
+    ground {
+        sprite: 1479;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1483;
+    }
+}
+
+spritelayout sprite_stadium_1_E {
+    ground {
+        sprite: 1480;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1484;
+    }
+}
+
+spritelayout sprite_stadium_1_W {
+    ground {
+        sprite: 1481;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1485;
+    }
+}
+
+spritelayout sprite_stadium_1_S {
+    ground {
+        sprite: 1482;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1486;
+    }
+}
+
+
 if (enable_temperate) {
     item(FEAT_HOUSES, item_stadium_1, 20, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x14;
-            building_flags: bitmask(HOUSE_FLAG_STADIUM);
+            building_flags: 0;
+            building_class: 2;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            graphics_north: sprite_stadium_1_N;
+            graphics_east: sprite_stadium_1_E;
+            graphics_south: sprite_stadium_1_S;
+            graphics_west: sprite_stadium_1_W;
+            construction_check: (
+                stadium_limit == 2
+                || (stadium_limit == 1 && same_house_count_town == 0)
+                || (stadium_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -996,15 +1093,64 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_stadium_2_N {
+    ground {
+        sprite: 1554;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1558;
+    }
+}
+
+spritelayout sprite_stadium_2_E {
+    ground {
+        sprite: 1555;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1559;
+    }
+}
+
+spritelayout sprite_stadium_2_W {
+    ground {
+        sprite: 1556;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1560;
+    }
+}
+
+spritelayout sprite_stadium_2_S {
+    ground {
+        sprite: 1557;
+    }
+     building {
+        sprite: construction_state==0 ? 0 : 1561;
+    }
+}
+
+
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_stadium_2, 40, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x20;
-            building_flags: bitmask(HOUSE_FLAG_STADIUM);
+            building_flags: 0;
+            building_class: 2;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            graphics_north: sprite_stadium_2_N;
+            graphics_east: sprite_stadium_2_E;
+            graphics_south: sprite_stadium_2_S;
+            graphics_west: sprite_stadium_2_W;
+            construction_check: (
+                stadium_limit == 2
+                || (stadium_limit == 1 && same_house_count_town == 0)
+                || (stadium_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1425,7 +1571,8 @@ if (enable_arctic) {
     item(FEAT_HOUSES, item_church_2, 61) {
         property {
             substitute: 0x3C;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0;
+            building_class: 1;
             availability_mask: [
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
@@ -1433,6 +1580,11 @@ if (enable_arctic) {
         }
         graphics {
             default: sprite_church_2;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
@@ -1847,15 +1999,31 @@ if (enable_tropic) {
     }
 }
 
+spritelayout sprite_church_3 {
+    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
+    building 	{
+        sprite: construction_state==0 ? 0 : 4604;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_church_3, 78) {
         property {
             substitute: 0x53;
-            building_flags: bitmask(HOUSE_FLAG_CHURCH);
+            building_flags: 0;
+            building_class: 1;
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            default: sprite_church_3;
+            construction_check: (
+                church_limit == 2
+                || (church_limit == 1 && same_house_count_town == 0)
+                || (church_limit == 0 && same_class_count_town == 0)
+            );
         }
     }
 }
