@@ -1829,3 +1829,22 @@ if (enable_tropic) {
         }
     }
 }
+
+spritelayout sprite_tall_office_block_1b {
+    ground { sprite: construction_state==3 ? 1424 : GROUNDSPRITE_CLEARED; }
+    building {
+        sprite: construction_state==0 ? 1421 : construction_state == 1 ? 1422 : 1423;
+    }
+}
+
+if (enable_temperate) {
+    item(FEAT_HOUSES, item_tall_office_block_1b, 86) {
+        property {
+            substitute: 0x00;
+            availability_mask: [
+                bitmask(TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+    }
+}
