@@ -1639,7 +1639,7 @@ if (enable_arctic) {
 spritelayout sprite_shops_and_offices_7 {
     ground	 	{sprite: GROUNDSPRITE_CLEARED; }
      building 	{
-        sprite: construction_state==0 ? 0 : construction_state < 3 ? 4470 : terrain_type != TILETYPE_SNOW ? 4470 : 4471;
+        sprite: construction_state==0 ? 0 : construction_state < 3 ? 4470 : terrain_type != TILETYPE_SNOW ? 4470 : 4582;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
