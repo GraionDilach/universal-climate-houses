@@ -1568,9 +1568,9 @@ if (enable_arctic) {
 }
 
 spritelayout sprite_church_2 {
-    ground	 	{sprite: construction_state < 2 ? 4463 : 4462 ; }
+    ground	 	{sprite: construction_state == 3 ? 4462 : construction_state == 0 ? 4463 : GROUNDSPRITE_CLEARED; }
      building 	{
-        sprite: construction_state==0 ? 4467 : construction_state < 3 ? 4464 : terrain_type != TILETYPE_SNOW ? 4465 : 4579;
+        sprite: construction_state==0 ? 0 : construction_state < 3 ? 4464 : terrain_type != TILETYPE_SNOW ? 4465 : 4579;
     }
 }
 
@@ -1596,11 +1596,10 @@ if (enable_arctic) {
     }
 }
 
-
 spritelayout sprite_houses_6 {
     ground	 	{sprite: construction_state != 3 ? GROUNDSPRITE_CLEARED : terrain_type != TILETYPE_SNOW ? 4466 : 4580; }
      building 	{
-        sprite: construction_state==0 ? 0 : construction_state==1 ? 4468 : terrain_type != TILETYPE_SNOW ? 4469 : 4581;
+        sprite: construction_state==0 ? 4467 : construction_state==1 ? 4468 : terrain_type != TILETYPE_SNOW ? 4469 : 4581;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
     }
