@@ -1908,7 +1908,7 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_7, 70) {
         property {
             substitute: 0x4E;
-            years_available: [1954, 65535];
+            years_available: [1939, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -1921,7 +1921,7 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_8, 71) {
         property {
             substitute: 0x4F;
-            years_available: [1954, 65535];
+            years_available: [1939, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -1934,6 +1934,7 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_9, 72) {
         property {
             substitute: 0x50;
+            years_available: [1939, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
@@ -2028,7 +2029,7 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_flats_3, 77) {
         property {
             substitute: 0x52;
-            years_available: [1959, 65535];
+            years_available: [1949, 65535];
             accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
@@ -2071,7 +2072,7 @@ if (enable_tropic) {
     item(FEAT_HOUSES, item_houses_11, 79) {
         property {
             substitute: 0x54;
-            years_available: [1954, 65535];
+            years_available: [1939, 65535];
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), //CENTRE omitted, to keep it a "town houses" counterpart
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)

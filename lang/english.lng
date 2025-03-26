@@ -30,7 +30,7 @@ STR_PARAM_STADIUM_LIMIT_EACH                :One old, one modern per town
 STR_PARAM_STADIUM_LIMIT_LIMITLESS           :No limit
 
 STR_PARAM_NAME_HOTEL_TOURIST                :Hotel's handling of Tourists
-STR_PARAM_DESC_HOTEL_TOURIST                :This setting requires an external industry NewGRF to define Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
+STR_PARAM_DESC_HOTEL_TOURIST                :This setting does nothing without an external industry NewGRF defining Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
 
 STR_PARAM_HOTEL_TOURIST_NO                  :Ignored (vanilla behaviour)
 STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance
