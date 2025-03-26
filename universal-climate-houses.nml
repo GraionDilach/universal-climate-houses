@@ -28,7 +28,7 @@ grf {
     grfid: "zgy\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 0002;
+    version: 0003;
     min_compatible_version: 2;
     url: string(STR_GRF_URL);
 

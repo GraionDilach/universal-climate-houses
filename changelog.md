@@ -1,3 +1,9 @@
+### v3 changelog
+- Bugfix: Revert a tall office block recolor because it looks corrupted on OpenGFX.
+- Bugfix: revert overdelayed Subtropic building introduction dates.
+- Bugfix: Fix selected Arctic buildings ending up with confused building sprites.
+- Bugfiux/feature: Properly introduced the unlimited Tourist Hotels.
+
 ### v2 changelog
 
 - Feature: Parametrize church/stadium limits.
