@@ -204,7 +204,7 @@ switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) {retu
 
 switch (FEAT_HOUSES, SELF, amenities_construction_check, (
     has_houses((same_class_count_town + 1) * 20)
-    && !nearest_house_matching_criterion(6, SEARCH_HOUSE_BY_CLASS)
+    && !nearest_house_matching_criterion(3, SEARCH_HOUSE_BY_CLASS)
 )) {return;}
 
 switch (FEAT_HOUSES, SELF, park_construction_check, (
@@ -1356,6 +1356,7 @@ if (enable_temperate) {
         property {
             substitute: 0x28;
             accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
+            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
