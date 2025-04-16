@@ -200,6 +200,17 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
     1: return PALETTE_STRUCT_CONCRETE;
 }
 
+switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) {return;}
+
+switch (FEAT_HOUSES, SELF, amenities_construction_check, (
+    has_houses((same_class_count_town + 1) * 20)
+    && !nearest_house_matching_criterion(6, SEARCH_HOUSE_BY_CLASS)
+)) {return;}
+
+switch (FEAT_HOUSES, SELF, park_construction_check, (
+    amenities_construction_check() && terrain_type != TILETYPE_DESERT
+)) {return;}
+
 // not gonna experiment with church
 
 spritelayout sprite_tall_office_block_1 {
@@ -464,15 +475,42 @@ if (enable_temperate) {
     }
 }
 
+spritelayout sprite_statue_1 {
+    ground {
+         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: construction_state < 2 ? 0 : 1454;
+        xoffset: 6;
+        yoffset: 5;
+    }
+}
+
 if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_statue_1, 9) {
         property {
             substitute: 0x09;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
-                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+        graphics {
+            default: sprite_statue_1;
+            construction_check: amenities_construction_check;
+        }
+    }
+}
+
+spritelayout sprite_fountain_1 {
+    ground {
+         sprite: construction_state!=0 ? GROUNDSPRITE_CONCRETE : GROUNDSPRITE_CLEARED;
+    }
+    building {
+        sprite: construction_state < 2 ? 0 : 1455;
+        xoffset: 3;
+        yoffset: 3;
     }
 }
 
@@ -480,11 +518,25 @@ if (enable_temperate || enable_arctic || enable_tropic) {
     item(FEAT_HOUSES, item_fountain_1, 10) {
         property {
             substitute: 0x0A;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_fountain_1;
+            construction_check: amenities_construction_check;
+        }
+    }
+}
+
+spritelayout sprite_park_1 {
+    ground {
+         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_GRASS;
+    }
+    building {
+        sprite: construction_state==0 ? 0 : 1456;
     }
 }
 
@@ -492,11 +544,25 @@ if (enable_temperate) {
     item(FEAT_HOUSES, item_park_1, 11) {
         property {
             substitute: 0x0B;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        graphics {
+            default: sprite_park_1;
+            construction_check: park_construction_check;
+        }
+    }
+}
+
+spritelayout sprite_park_2 {
+    ground {
+         sprite: construction_state==0 ? GROUNDSPRITE_CLEARED : GROUNDSPRITE_GRASS;
+    }
+    building {
+        sprite: construction_state==0 ? 0 : 1457;
     }
 }
 
@@ -504,10 +570,15 @@ if (enable_temperate) {
     item(FEAT_HOUSES, item_park_2, 12) {
         property {
             substitute: 0x0C;
+            building_class: 30;
             availability_mask: [
                 bitmask(TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            default: sprite_park_2;
+            construction_check: park_construction_check;
         }
     }
 }
@@ -2266,6 +2337,37 @@ if (enable_temperate) {
         }
         graphics {
                 default: sprite_tall_office_block_1b;
+        }
+    }
+}
+
+spritelayout sprite_statue_2 {
+    ground {
+        sprite: construction_state == 0
+        ? GROUNDSPRITE_CLEARED
+        : terrain_type == TILETYPE_SNOW ? GROUNDSPRITE_SNOW
+        : terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : 4000;
+    }
+    building {
+        sprite: construction_state < 2 ? 0 : 1454;
+        xoffset: 6;
+        yoffset: 5;
+    }
+}
+
+if (enable_temperate || enable_arctic || enable_tropic) {
+    item(FEAT_HOUSES, item_statue_2, 87) {
+        property {
+            substitute: 0x09;
+            building_class: 30;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
+            ];
+        }
+        graphics {
+            default: sprite_statue_2;
+            construction_check: amenities_construction_check;
         }
     }
 }
