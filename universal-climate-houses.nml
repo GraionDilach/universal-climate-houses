@@ -2101,9 +2101,9 @@ if (enable_tropic) {
 if (enable_tropic) {
     item(FEAT_HOUSES, item_flats_3, 77) {
         property {
-            substitute: 0x52;
+            substitute: 0x1B;
             years_available: [1949, 65535];
-            accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
+            accepted_cargos: [[PASS, 7], [MAIL, 2], [GOOD, 2], [FOOD, 3]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
