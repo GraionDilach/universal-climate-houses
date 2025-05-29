@@ -122,8 +122,9 @@ grf {
 cargotable {
     PASS, MAIL, GOOD, FOOD, TOUR
 }
-
-disable_item(FEAT_HOUSES);
+if (climate != CLIMATE_TOYLAND) {
+    disable_item(FEAT_HOUSES);
+}
 
 // shared functions
 
