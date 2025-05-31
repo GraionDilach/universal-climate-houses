@@ -2682,3 +2682,25 @@ if (enable_temperate || enable_arctic || enable_tropic) {
         }
     }
 }
+
+spritelayout sprite_tall_office_block_2b {
+    ground	 	{ sprite: construction_state==0 ? 1546 : construction_state==1 ? 1548 : 1550; }
+    building 	{
+        sprite: construction_state==0 ? 1547 : construction_state == 1 ? 1549 : 1551;
+    }
+}
+
+if (enable_temperate) {
+    item(FEAT_HOUSES, item_tall_office_block_2b, 88) {
+        property {
+            substitute: 0x1C;
+            availability_mask: [
+                bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
+                bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
+            ];
+        }
+        graphics {
+            default: sprite_tall_office_block_2b;
+        }
+    }
+}
