@@ -969,6 +969,10 @@ random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
     1: return PALETTE_STRUCT_WHITE;
     1: return PALETTE_STRUCT_GREEN;
     1: return PALETTE_STRUCT_CONCRETE;
+    1: return PALETTE_NEWSTRUCT_CRASH;
+    1: return PALETTE_NEWSTRUCT_CREAM;
+    1: return PALETTE_NEWSTRUCT_MAUVE;
+    1: return PALETTE_NEWSTRUCT_BROWN;
 }
 
 if (enable_temperate) {
