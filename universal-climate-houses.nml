@@ -140,6 +140,8 @@ if (climate != CLIMATE_TOYLAND) {
 
 switch (FEAT_HOUSES, SELF, hotel_tourist_production, getbits(extra_callback_info1, 0, 8)) {
     0: return cargotype("TOUR")*256 + 2;
+    1: return cargotype("PASS")*256 + 2;
+    2: return cargotype("MAIL")*256 + 1;
     return CB_RESULT_HOUSE_NO_MORE_PRODUCTION;
 }
 
