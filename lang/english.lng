@@ -10,6 +10,9 @@ STR_PARAM_NAME_ENABLE_ARCTIC                :Enable Arctic houses
 
 STR_PARAM_NAME_ENABLE_TROPIC                :Enable Sub-Tropic houses
 
+STR_PARAM_NAME_PROTECT_MULTICELL            :Protect multicell buildings from town growth autoreplace
+STR_PARAM_DESC_PROTECT_MULTICELL            :In practice, OpenTTD's town growth algorithm can't find suitable positions for multicell buildings inside a town which can lead to such buildings (e. g. hotels or the arctic tall office building) gradually fading away from the gameplay. This setting prevents the town from replacing such buildings on their own to complement this effect.
+
 STR_PARAM_NAME_ADDITIONAL_COLORS            :Random color variations
 STR_PARAM_DESC_ADDITIONAL_COLORS            :Choose how random color assignments should behave.
 
@@ -30,7 +33,7 @@ STR_PARAM_STADIUM_LIMIT_EACH                :One old, one modern per town
 STR_PARAM_STADIUM_LIMIT_LIMITLESS           :No limit
 
 STR_PARAM_NAME_HOTEL_TOURIST                :Hotel's handling of Tourists
-STR_PARAM_DESC_HOTEL_TOURIST                :This setting does nothing without an external industry NewGRF defining Tourists. If Hotels are set to "Full acceptance and production", they will also be marked as protected.
+STR_PARAM_DESC_HOTEL_TOURIST                :This setting does nothing without an external industry NewGRF defining Tourists. If Hotels are set to any of the "Full acceptance and production" settings, they will also be marked as protected even from player destruction, regardless of the "Protect multicell buildings from town growth autoreplace" setting.
 
 STR_PARAM_HOTEL_TOURIST_NO                  :Ignored (vanilla behaviour)
 STR_PARAM_HOTEL_TOURIST_ACCEPT              :Partial acceptance

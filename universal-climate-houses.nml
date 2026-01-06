@@ -53,6 +53,14 @@ grf {
             name: string(STR_PARAM_NAME_ENABLE_TROPIC);
             def_value: 1;
         }
+
+        protect_multicell {
+            type: bool;
+            bit: 3;
+            name: string(STR_PARAM_NAME_PROTECT_MULTICELL);
+            desc: string(STR_PARAM_DESC_PROTECT_MULTICELL);
+            def_value: 1;
+        }
     }
 
     param 1 {
@@ -750,6 +758,11 @@ if (enable_temperate) {
         if (cargotype_available("TOUR") && hotel_tourist == 1) {
             property {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
+            }
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             }
         }
         if (cargotype_available("TOUR") && hotel_tourist > 1) {
@@ -1670,11 +1683,15 @@ if (enable_temperate) {
         property {
             substitute: 0x28;
             accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
             availability_mask: [
                 bitmask(TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
     }
 }
@@ -2098,6 +2115,11 @@ if (enable_arctic) {
                 accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3], [TOUR, 2]];
             }
         }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
+        }
         if (cargotype_available("TOUR") && hotel_tourist > 1) {
             property {
                 building_flags: bitmask(HOUSE_FLAG_PROTECTED);
@@ -2281,7 +2303,11 @@ if (enable_arctic) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         graphics {
             graphics_north: sprite_tall_office_block_7_N;
@@ -2562,7 +2588,11 @@ if (enable_tropic) {
                 bitmask(TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
-            building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+        }
+        if (protect_multicell == 1) {
+            property {
+                building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+            }
         }
         if (additional_colors == 0) {
             graphics {
