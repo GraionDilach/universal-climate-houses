@@ -431,6 +431,8 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
 
 switch (FEAT_HOUSES, PARENT, has_houses, required, num_houses >= required) { return; }
 
+switch (FEAT_HOUSES, PARENT, has_population, required, population >= required) { return; }
+
 switch (FEAT_HOUSES, SELF, amenities_construction_check, (
     has_houses((same_class_count_town + 1) * 20)
     && !nearest_house_matching_criterion(3, SEARCH_HOUSE_BY_CLASS)
@@ -567,7 +569,8 @@ if (enable_temperate) {
         graphics {
             default: sprite_church_1;
             construction_check: (
-                church_limit == 2
+                (church_limit == 2 && has_population((same_house_count_town + 1) * 1000)
+                    && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_TYPE))
                 || (church_limit == 1 && same_house_count_town == 0)
                 || (church_limit == 0 && same_class_count_town == 0)
             );
@@ -1053,7 +1056,8 @@ if (enable_temperate) {
             graphics_south: sprite_stadium_1_S;
             graphics_west: sprite_stadium_1_W;
             construction_check: (
-                stadium_limit == 2
+                (stadium_limit == 2 && has_population((same_house_count_town + 1) * 2000)
+                    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_TYPE))
                 || (stadium_limit == 1 && same_house_count_town == 0)
                 || (stadium_limit == 0 && same_class_count_town == 0)
             );
@@ -1507,7 +1511,8 @@ if (enable_temperate || enable_arctic || enable_tropic) {
             graphics_south: sprite_stadium_2_S;
             graphics_west: sprite_stadium_2_W;
             construction_check: (
-                stadium_limit == 2
+                (stadium_limit == 2 && has_population((same_house_count_town + 1) * 2000)
+                    && !nearest_house_matching_criterion(8, SEARCH_HOUSE_BY_TYPE))
                 || (stadium_limit == 1 && same_house_count_town == 0)
                 || (stadium_limit == 0 && same_class_count_town == 0)
             );
@@ -1946,7 +1951,8 @@ if (enable_arctic) {
         graphics {
             default: sprite_church_2;
             construction_check: (
-                church_limit == 2
+                (church_limit == 2 && has_population((same_house_count_town + 1) * 1000)
+                    && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_TYPE))
                 || (church_limit == 1 && same_house_count_town == 0)
                 || (church_limit == 0 && same_class_count_town == 0)
             );
@@ -2428,7 +2434,8 @@ if (enable_tropic) {
         graphics {
             default: sprite_church_3;
             construction_check: (
-                church_limit == 2
+                (church_limit == 2 && has_population((same_house_count_town + 1) * 1000)
+                    && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_TYPE))
                 || (church_limit == 1 && same_house_count_town == 0)
                 || (church_limit == 0 && same_class_count_town == 0)
             );
@@ -2683,7 +2690,8 @@ item(FEAT_HOUSES, item_toyland_church) {
             default: sprite_toyland_church;
             colour: random_company_color();
             construction_check: (
-                church_limit == 2
+                (church_limit == 2 && has_population((same_house_count_town + 1) * 1000)
+                    && !nearest_house_matching_criterion(5, SEARCH_HOUSE_BY_TYPE))
                 || (church_limit == 1 && same_house_count_town == 0)
                 || (church_limit == 0 && same_class_count_town == 0)
             );

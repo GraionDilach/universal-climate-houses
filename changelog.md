@@ -1,7 +1,8 @@
 ### v4 changelog
 
 - Feature: Add an option to allow multicell buildings to be protected against town renewal.
-- Feature: Incorporate both vanilla and NewCC color gradients among random colorations, regardless of NewCC.
+- Feature: Incorporate both vanilla and NewCC color gradients among random colorations, regardless of NewCC. Also consider green a sensible structure color.
+- Tweak: Tie unlimited church/stadium count to population.
 - Bugfix: Restore missing tall office block variants.
 - Bugfix: Fix behaviour on Toyland - Toyland is also redefined to benefit from the additional gradients and to allow all office blocks to accept both Sweets and Fizzy Drink.
 
