@@ -466,7 +466,7 @@ spritelayout sprite_tall_office_block_1 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_tall_office_block_1, 0) {
+    item(FEAT_HOUSES, item_tall_office_block_1) {
         property {
             substitute: 0x00;
             availability_mask: [
@@ -521,7 +521,7 @@ spritelayout sprite_office_block_1 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_office_block_1, 1) {
+    item(FEAT_HOUSES, item_office_block_1) {
         property {
             substitute: 0x01;
             availability_mask: [
@@ -546,7 +546,7 @@ if (enable_temperate) {
 
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_small_block_of_flats_1, 2) {
+    item(FEAT_HOUSES, item_small_block_of_flats_1) {
         property {
             substitute: 0x02;
             accepted_cargos: [[PASS, 8], [MAIL, 3], [GOOD, 1], [FOOD, 3]];
@@ -568,7 +568,7 @@ spritelayout sprite_church_1 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_church_1, 3) {
+    item(FEAT_HOUSES, item_church_1) {
         property {
             substitute: 0x03;
             building_flags: 0;
@@ -608,7 +608,7 @@ switch (FEAT_HOUSES, SELF, large_office_block_construction_check, construction_s
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_large_office_block_1, 4) {
+    item(FEAT_HOUSES, item_large_office_block_1) {
         property {
             substitute: 0x04;
             building_flags: bitmask(HOUSE_FLAG_ANIMATE, HOUSE_FLAG_RANDOM_ANIMATION);
@@ -639,7 +639,7 @@ spritelayout sprite_town_houses_1b {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_town_houses_1a, 5) {
+    item(FEAT_HOUSES, item_town_houses_1a) {
         property {
             substitute: 0x06;
             years_available: [1950, 65535];
@@ -654,7 +654,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_town_houses_1b, 6) {
+    item(FEAT_HOUSES, item_town_houses_1b) {
         property {
             substitute: 0x06;
             years_available: [1950, 65535];
@@ -685,7 +685,7 @@ spritelayout sprite_temperate_hotel_E {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_hotel_1, 7, HOUSE_SIZE_1X2) {
+    item(FEAT_HOUSES, item_hotel_1, -1, HOUSE_SIZE_1X2) {
         property {
             substitute: 0x07;
             availability_mask: [
@@ -753,7 +753,7 @@ spritelayout sprite_statue_1 {
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_statue_1, 9) {
+    item(FEAT_HOUSES, item_statue_1) {
         property {
             substitute: 0x09;
             building_class: 30;
@@ -781,7 +781,7 @@ spritelayout sprite_fountain_1 {
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_fountain_1, 10) {
+    item(FEAT_HOUSES, item_fountain_1) {
         property {
             substitute: 0x0A;
             building_class: 30;
@@ -807,7 +807,7 @@ spritelayout sprite_park_1 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_park_1, 11) {
+    item(FEAT_HOUSES, item_park_1) {
         property {
             substitute: 0x0B;
             building_class: 30;
@@ -833,7 +833,7 @@ spritelayout sprite_park_2 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_park_2, 12) {
+    item(FEAT_HOUSES, item_park_2) {
         property {
             substitute: 0x0C;
             building_class: 30;
@@ -859,7 +859,7 @@ spritelayout sprite_office_block_2 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_office_block_2, 13) {
+    item(FEAT_HOUSES, item_office_block_2) {
         property {
             substitute: 0x0D;
             availability_mask: [
@@ -883,7 +883,7 @@ if (enable_temperate) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_shops_and_offices_1, 14) {
+    item(FEAT_HOUSES, item_shops_and_offices_1) {
         property {
             substitute: 0x0E;
             years_available: [0, 1960];
@@ -896,7 +896,7 @@ if (enable_temperate) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_shops_and_offices_2, 15) {
+    item(FEAT_HOUSES, item_shops_and_offices_2) {
         property {
             substitute: 0x0F;
             years_available: [0, 1960];
@@ -932,7 +932,7 @@ random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_shops_and_offices_3, 16) {
+    item(FEAT_HOUSES, item_shops_and_offices_3) {
         property {
             substitute: 0x10;
             years_available: [0, 1960];
@@ -968,7 +968,7 @@ spritelayout sprite_modern_office_building_1 {
 }
 
 if ((enable_temperate || enable_arctic || enable_tropic)) {
-    item(FEAT_HOUSES, item_modern_office_building_1, 17) {
+    item(FEAT_HOUSES, item_modern_office_building_1) {
         property {
             substitute: 0x11;
             availability_mask: [
@@ -986,7 +986,7 @@ if ((enable_temperate || enable_arctic || enable_tropic)) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_warehouse_1, 18) {
+    item(FEAT_HOUSES, item_warehouse_1) {
         property {
             substitute: 0x12;
             availability_mask: [
@@ -998,7 +998,7 @@ if (enable_temperate) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_office_block_3, 19) {
+    item(FEAT_HOUSES, item_office_block_3) {
         property {
             substitute: 0x13;
             availability_mask: [
@@ -1047,7 +1047,7 @@ spritelayout sprite_stadium_1_S {
 
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_stadium_1, 20, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_stadium_1, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x14;
             building_flags: 0;
@@ -1096,7 +1096,7 @@ spritelayout sprite_old_houses_1d {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_old_houses_1a, 24) {
+    item(FEAT_HOUSES, item_old_houses_1a) {
         property {
             substitute: 0x18;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1110,7 +1110,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_old_houses_1b, 25) {
+    item(FEAT_HOUSES, item_old_houses_1b) {
         property {
             substitute: 0x18;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1124,7 +1124,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_old_houses_1c, 26) {
+    item(FEAT_HOUSES, item_old_houses_1c) {
         property {
             substitute: 0x18;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1138,7 +1138,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_old_houses_1d, 27) {
+    item(FEAT_HOUSES, item_old_houses_1d) {
         property {
             substitute: 0x18;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1155,7 +1155,7 @@ if (enable_temperate) {
 
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_cottages_1, 28) {
+    item(FEAT_HOUSES, item_cottages_1) {
         property {
             substitute: 0x19;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1196,7 +1196,7 @@ spritelayout sprite_houses_1d {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_houses_1a, 29) {
+    item(FEAT_HOUSES, item_houses_1a) {
         property {
             substitute: 0x1A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1210,7 +1210,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_1b, 30) {
+    item(FEAT_HOUSES, item_houses_1b) {
         property {
             substitute: 0x1A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1224,7 +1224,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_1c, 31) {
+    item(FEAT_HOUSES, item_houses_1c) {
         property {
             substitute: 0x1A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1238,7 +1238,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_1d, 32) {
+    item(FEAT_HOUSES, item_houses_1d) {
         property {
             substitute: 0x1A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [FOOD, 2]];
@@ -1268,7 +1268,7 @@ spritelayout sprite_flats_1b {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_flats_1a, 33) {
+    item(FEAT_HOUSES, item_flats_1a) {
         property {
             substitute: 0x1B;
             accepted_cargos: [[PASS, 7], [MAIL, 2], [GOOD, 2], [FOOD, 3]];
@@ -1282,7 +1282,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_flats_1b, 34) {
+    item(FEAT_HOUSES, item_flats_1b) {
         property {
             substitute: 0x1B;
             accepted_cargos: [[PASS, 7], [MAIL, 2], [GOOD, 2], [FOOD, 3]];
@@ -1306,7 +1306,7 @@ spritelayout sprite_tall_office_block_2 {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_tall_office_block_2, 35) {
+    item(FEAT_HOUSES, item_tall_office_block_2) {
         property {
             substitute: 0x1C;
             availability_mask: [
@@ -1328,7 +1328,7 @@ spritelayout sprite_tall_office_block_2b {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_tall_office_block_2b, 88) {
+    item(FEAT_HOUSES, item_tall_office_block_2b) {
         property {
             substitute: 0x1C;
             availability_mask: [
@@ -1371,7 +1371,7 @@ random_switch (FEAT_HOUSES, SELF, color_shops_and_offices_4b) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_shops_and_offices_4a, 36) {
+    item(FEAT_HOUSES, item_shops_and_offices_4a) {
         property {
             substitute: 0x1D;
             availability_mask: [
@@ -1402,7 +1402,7 @@ if (enable_temperate) {
         }
     }
 
-    item(FEAT_HOUSES, item_shops_and_offices_4b, 37) {
+    item(FEAT_HOUSES, item_shops_and_offices_4b) {
         property {
             substitute: 0x1D;
             availability_mask: [
@@ -1435,7 +1435,7 @@ if (enable_temperate) {
 }
 
 if (enable_temperate || enable_tropic) {
-    item(FEAT_HOUSES, item_shops_and_offices_5, 38) {
+    item(FEAT_HOUSES, item_shops_and_offices_5) {
         property {
             substitute: 0x1E;
             availability_mask: [
@@ -1447,7 +1447,7 @@ if (enable_temperate || enable_tropic) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_theater_1, 39) {
+    item(FEAT_HOUSES, item_theater_1) {
         property {
             substitute: 0x1F;
             years_available: [1950, 65535];
@@ -1497,7 +1497,7 @@ spritelayout sprite_stadium_2_S {
 
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_stadium_2, 40, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_stadium_2, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x20;
             building_flags: 0;
@@ -1518,7 +1518,7 @@ if (enable_temperate || enable_arctic || enable_tropic) {
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_offices_1, 44) {
+    item(FEAT_HOUSES, item_offices_1) {
         property {
             substitute: 0x24;
             availability_mask: [
@@ -1566,7 +1566,7 @@ random_switch (FEAT_HOUSES, SELF, color_houses_2b) {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_2a, 45) {
+    item(FEAT_HOUSES, item_houses_2a) {
         property {
             substitute: 0x25;
             availability_mask: [
@@ -1594,7 +1594,7 @@ if (enable_arctic) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_2b, 46) {
+    item(FEAT_HOUSES, item_houses_2b) {
         property {
             substitute: 0x26;
             availability_mask: [
@@ -1624,7 +1624,7 @@ if (enable_arctic) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_cinema_1, 47) {
+    item(FEAT_HOUSES, item_cinema_1) {
         property {
             substitute: 0x27;
             availability_mask: [
@@ -1636,7 +1636,7 @@ if (enable_temperate) {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_shopping_mall_1, 48, HOUSE_SIZE_2X2) {
+    item(FEAT_HOUSES, item_shopping_mall_1, -1, HOUSE_SIZE_2X2) {
         property {
             substitute: 0x28;
             accepted_cargos: [[PASS, 8], [MAIL, 2], [GOOD, 3], [FOOD, 3]];
@@ -1661,7 +1661,7 @@ spritelayout sprite_flats_2 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_flats_2, 52) {
+    item(FEAT_HOUSES, item_flats_2) {
         property {
             substitute: 0x2C;
             accepted_cargos: [[PASS, 5], [MAIL, 2], [GOOD, 2], [FOOD, 2]];
@@ -1684,7 +1684,7 @@ spritelayout sprite_houses_3 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_3, 53) {
+    item(FEAT_HOUSES, item_houses_3) {
         property {
             substitute: 0x2E;
             availability_mask: [
@@ -1715,7 +1715,7 @@ random_switch (FEAT_HOUSES, SELF, houses_4_color) {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_4, 54) {
+    item(FEAT_HOUSES, item_houses_4) {
         property {
             substitute: 0x30;
             availability_mask: [
@@ -1758,7 +1758,7 @@ spritelayout sprite_tall_office_block_3 {
 
 
 if (enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_tall_office_block_3, 55) {
+    item(FEAT_HOUSES, item_tall_office_block_3) {
         property {
             substitute: 0x32;
             availability_mask: [
@@ -1796,7 +1796,7 @@ spritelayout sprite_tall_office_block_4 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_tall_office_block_4, 56) {
+    item(FEAT_HOUSES, item_tall_office_block_4) {
         property {
             substitute: 0x34;
             availability_mask: [
@@ -1834,7 +1834,7 @@ spritelayout sprite_tall_office_block_5 {
 }
 
 if (enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_tall_office_block_5, 57) {
+    item(FEAT_HOUSES, item_tall_office_block_5) {
         property {
             substitute: 0x36;
             availability_mask: [
@@ -1877,7 +1877,7 @@ spritelayout sprite_houses_5b {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_5a, 58) {
+    item(FEAT_HOUSES, item_houses_5a) {
         property {
             substitute: 0x38;
             availability_mask: [
@@ -1890,7 +1890,7 @@ if (enable_arctic) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_5b, 59) {
+    item(FEAT_HOUSES, item_houses_5b) {
         property {
             substitute: 0x38;
             availability_mask: [
@@ -1912,7 +1912,7 @@ spritelayout sprite_shops_and_offices_6 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_shops_and_offices_6, 60) {
+    item(FEAT_HOUSES, item_shops_and_offices_6) {
         property {
             substitute: 0x3A;
             accepted_cargos: [[PASS, 3], [MAIL, 1], [GOOD, 1], [FOOD, 2]];
@@ -1935,7 +1935,7 @@ spritelayout sprite_church_2 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_church_2, 61) {
+    item(FEAT_HOUSES, item_church_2) {
         property {
             substitute: 0x3C;
             building_flags: 0;
@@ -1962,7 +1962,7 @@ spritelayout sprite_houses_6 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_houses_6, 62) {
+    item(FEAT_HOUSES, item_houses_6) {
         property {
             substitute: 0x3E;
             availability_mask: [
@@ -2002,7 +2002,7 @@ spritelayout sprite_shops_and_offices_7 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_shops_and_offices_7, 63) {
+    item(FEAT_HOUSES, item_shops_and_offices_7) {
         property {
             substitute: 0x40;
             availability_mask: [
@@ -2049,7 +2049,7 @@ spritelayout sprite_arctic_hotel_E {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_hotel_2, 64, HOUSE_SIZE_1X2) {
+    item(FEAT_HOUSES, item_hotel_2, -1, HOUSE_SIZE_1X2) {
         property {
             substitute: 0x42;
             accepted_cargos: [[PASS, 6], [MAIL, 1], [GOOD, 2], [FOOD, 3]];
@@ -2168,7 +2168,7 @@ spritelayout sprite_shops_and_offices_8 {
 }
 
 if (enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_shops_and_offices_8, 66) {
+    item(FEAT_HOUSES, item_shops_and_offices_8) {
         property {
             substitute: 0x46;
             availability_mask: [
@@ -2206,7 +2206,7 @@ spritelayout sprite_tall_office_block_6 {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_tall_office_block_6, 67) {
+    item(FEAT_HOUSES, item_tall_office_block_6) {
         property {
             substitute: 0x48;
             availability_mask: [
@@ -2249,7 +2249,7 @@ spritelayout sprite_tall_office_block_7_W {
 }
 
 if (enable_arctic) {
-    item(FEAT_HOUSES, item_tall_office_block_7, 68, HOUSE_SIZE_2X1) {
+    item(FEAT_HOUSES, item_tall_office_block_7, -1, HOUSE_SIZE_2X1) {
         property {
             substitute: 0x4A;
             availability_mask: [
@@ -2271,7 +2271,7 @@ if (enable_arctic) {
 
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_houses_7, 70) {
+    item(FEAT_HOUSES, item_houses_7) {
         property {
             substitute: 0x4E;
             years_available: [1939, 65535];
@@ -2284,7 +2284,7 @@ if (enable_tropic) {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_houses_8, 71) {
+    item(FEAT_HOUSES, item_houses_8) {
         property {
             substitute: 0x4F;
             years_available: [1939, 65535];
@@ -2297,7 +2297,7 @@ if (enable_tropic) {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_houses_9, 72) {
+    item(FEAT_HOUSES, item_houses_9) {
         property {
             substitute: 0x50;
             years_available: [1939, 65535];
@@ -2338,7 +2338,7 @@ spritelayout sprite_houses_10d {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_houses_10a, 73) {
+    item(FEAT_HOUSES, item_houses_10a) {
         property {
             substitute: 0x51;
             availability_mask: [
@@ -2351,7 +2351,7 @@ if (enable_tropic) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_10b, 74) {
+    item(FEAT_HOUSES, item_houses_10b) {
         property {
             substitute: 0x51;
             availability_mask: [
@@ -2364,7 +2364,7 @@ if (enable_tropic) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_10c, 75) {
+    item(FEAT_HOUSES, item_houses_10c) {
         property {
             substitute: 0x51;
             availability_mask: [
@@ -2377,7 +2377,7 @@ if (enable_tropic) {
         }
     }
 
-    item(FEAT_HOUSES, item_houses_10d, 76) {
+    item(FEAT_HOUSES, item_houses_10d) {
         property {
             substitute: 0x51;
             availability_mask: [
@@ -2392,7 +2392,7 @@ if (enable_tropic) {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_flats_3, 77) {
+    item(FEAT_HOUSES, item_flats_3) {
         property {
             substitute: 0x1B;
             years_available: [1949, 65535];
@@ -2413,7 +2413,7 @@ spritelayout sprite_church_3 {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_church_3, 78) {
+    item(FEAT_HOUSES, item_church_3) {
         property {
             substitute: 0x53;
             building_flags: 0;
@@ -2431,7 +2431,7 @@ if (enable_tropic) {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_houses_11, 79) {
+    item(FEAT_HOUSES, item_houses_11) {
         property {
             substitute: 0x54;
             years_available: [1939, 65535];
@@ -2453,7 +2453,7 @@ spritelayout sprite_flats_4 {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_flats_4, 80) {
+    item(FEAT_HOUSES, item_flats_4) {
         property {
             substitute: 0x55;
             accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
@@ -2487,7 +2487,7 @@ spritelayout sprite_flats_5 {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_flats_5, 81) {
+    item(FEAT_HOUSES, item_flats_5) {
         property {
             substitute: 0x56;
             accepted_cargos: [[PASS, 6], [MAIL, 2], [GOOD, 1], [FOOD, 2]];
@@ -2530,7 +2530,7 @@ spritelayout sprite_tall_office_block_8_W {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_tall_office_block_8, 82, HOUSE_SIZE_2X1) {
+    item(FEAT_HOUSES, item_tall_office_block_8, -1, HOUSE_SIZE_2X1) {
         property {
             substitute: 0x57;
             availability_mask: [
@@ -2567,7 +2567,7 @@ if (enable_tropic) {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_flats_6, 84) {
+    item(FEAT_HOUSES, item_flats_6) {
         property {
             substitute: 0x59;
             years_available: [1929, 65535];
@@ -2590,7 +2590,7 @@ spritelayout sprite_tall_office_block_9 {
 }
 
 if (enable_tropic) {
-    item(FEAT_HOUSES, item_tall_office_block_9, 85) {
+    item(FEAT_HOUSES, item_tall_office_block_9) {
         property {
             substitute: 0x5A;
             availability_mask: [
@@ -2628,7 +2628,7 @@ spritelayout sprite_statue_2 {
 }
 
 if (enable_temperate || enable_arctic || enable_tropic) {
-    item(FEAT_HOUSES, item_statue_2, 87) {
+    item(FEAT_HOUSES, item_statue_2) {
         property {
             substitute: 0x09;
             building_class: 30;
