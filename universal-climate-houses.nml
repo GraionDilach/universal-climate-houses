@@ -497,7 +497,7 @@ spritelayout sprite_tall_office_block_1b {
 }
 
 if (enable_temperate) {
-    item(FEAT_HOUSES, item_tall_office_block_1b, 86) {
+    item(FEAT_HOUSES, item_tall_office_block_1b) {
         property {
             substitute: 0x00;
             availability_mask: [
@@ -506,7 +506,7 @@ if (enable_temperate) {
             ];
         }
         graphics {
-                default: sprite_tall_office_block_1b;
+            default: sprite_tall_office_block_1b;
         }
     }
 }
