@@ -10,6 +10,7 @@ A simple NewGRF to enable vanilla temperate/arctic/sub-tropic houses on other cl
 - External parameter over stadium and church count.
 - Optionally protect multicell buildings inside inner town zones from town autoreplacement to prevent them being heavily underrepresented in an ongoing game.
 - Options to control how Hotels should handle Tourists, inspired by old TTRS behaviour (requires an external cargo NewGRF with Tourists).
+- Optionally prevent old, 1930s styled buildings to be built after they'd be phased out.
 
 ## License
 
@@ -28,6 +29,10 @@ PikkaBird: inspiration from Suburban Renewal Houses
 Graion Dilach
 
 ## Changelog
+
+### v5 changelog
+
+ - Feature: Add a setting to keep old buildings after they're phased out.
 
 ### v4 changelog
 

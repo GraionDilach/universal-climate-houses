@@ -61,6 +61,14 @@ grf {
             desc: string(STR_PARAM_DESC_PROTECT_MULTICELL);
             def_value: 1;
         }
+
+        keep_old_houses {
+            type: bool;
+            bit: 4;
+            name: string(STR_PARAM_NAME_KEEP_OLD_HOUSES);
+            desc: string(STR_PARAM_DESC_KEEP_OLD_HOUSES);
+            def_value: 0;
+        }
     }
 
     param 1 {
@@ -892,6 +900,11 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
     }
 }
 
@@ -904,6 +917,11 @@ if (enable_temperate) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
     }
 }
@@ -940,6 +958,11 @@ if (enable_temperate) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
         if (additional_colors == 1)
         {
@@ -1108,6 +1131,11 @@ if (enable_temperate) {
         graphics {
             default: sprite_old_houses_1a;
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
     }
 
     item(FEAT_HOUSES, item_old_houses_1b) {
@@ -1121,6 +1149,11 @@ if (enable_temperate) {
         }
         graphics {
             default: sprite_old_houses_1b;
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
     }
 
@@ -1136,6 +1169,11 @@ if (enable_temperate) {
         graphics {
             default: sprite_old_houses_1c;
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
     }
 
     item(FEAT_HOUSES, item_old_houses_1d) {
@@ -1150,6 +1188,11 @@ if (enable_temperate) {
         graphics {
             default: sprite_old_houses_1d;
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
     }
 }
 
@@ -1163,6 +1206,11 @@ if (enable_temperate) {
                 bitmask(TOWNZONE_EDGE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
     }
 }
@@ -1379,6 +1427,11 @@ if (enable_temperate) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
         if (additional_colors == 0)
         {
             graphics {
@@ -1409,6 +1462,11 @@ if (enable_temperate) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
         if (additional_colors == 0)
         {
@@ -1574,6 +1632,11 @@ if (enable_arctic) {
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
         }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
+        }
         if (additional_colors == 0) {
             graphics {
                 default: sprite_houses_2a;
@@ -1601,6 +1664,11 @@ if (enable_arctic) {
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
         if (additional_colors == 0) {
             graphics {
@@ -1722,6 +1790,11 @@ if (enable_arctic) {
                 bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
         if (additional_colors == 0)
         {
@@ -2009,6 +2082,11 @@ if (enable_arctic) {
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC, ABOVE_SNOWLINE)
             ];
+        }
+        if (keep_old_houses) {
+            property {
+                years_available: [0, 65535];
+            }
         }
         if (additional_colors == 0) {
             graphics {

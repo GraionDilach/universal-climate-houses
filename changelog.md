@@ -1,3 +1,7 @@
+### v5 changelog
+
+ - Feature: Add a setting to keep old buildings after they're phased out.
+
 ### v4 changelog
 
 - Feature: Incorporate both vanilla and NewCC color gradients among random colorations, regardless of NewCC. Also consider green a sensible structure color.
