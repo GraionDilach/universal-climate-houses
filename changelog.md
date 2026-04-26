@@ -1,3 +1,7 @@
+### v6 changelog
+
+ - Bugfix: Fix tropical tall flat using temperate flat artwork.
+
 ### v5 changelog
 
  - Feature: Add a setting to keep old buildings after they're phased out.

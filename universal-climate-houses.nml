@@ -28,7 +28,7 @@ grf {
     grfid: "zgy\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 0004;
+    version: 0006;
     min_compatible_version: 4;
     url: string(STR_GRF_URL);
 
@@ -2469,16 +2469,26 @@ if (enable_tropic) {
     }
 }
 
+spritelayout sprite_flats_3 {
+    ground	 	{ sprite: GROUNDSPRITE_CLEARED; }
+    building 	{
+        sprite: construction_state==0 ? 4601 : construction_state!=3 ? 4602 : 4603;
+    }
+}
+
 if (enable_tropic) {
     item(FEAT_HOUSES, item_flats_3) {
         property {
-            substitute: 0x1B;
+            substitute: 0x1B; //0x52
             years_available: [1949, 65535];
             accepted_cargos: [[PASS, 7], [MAIL, 2], [GOOD, 2], [FOOD, 3]];
             availability_mask: [
                 bitmask(TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB, TOWNZONE_CENTRE),
                 bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPIC)
             ];
+        }
+        graphics {
+            default: sprite_flats_3;
         }
     }
 }
