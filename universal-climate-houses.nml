@@ -572,13 +572,13 @@ if (enable_temperate) {
         if (additional_colors == 1) {
             graphics {
                 default: sprite_office_block_1;
-                colour: random_struct_color();
+                colour: random_modest_struct_color();
             }
         }
         if (additional_colors == 2) {
             graphics {
                 default: sprite_office_block_1;
-                colour: random_modest_struct_color();
+                colour: random_struct_color();
             }
         }
     }
