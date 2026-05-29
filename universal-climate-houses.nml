@@ -28,8 +28,8 @@ grf {
     grfid: "zgy\01";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 0006;
-    min_compatible_version: 4;
+    version: 0007;
+    min_compatible_version: 7;
     url: string(STR_GRF_URL);
 
     param 0 {
@@ -369,7 +369,7 @@ random_switch (FEAT_HOUSES, SELF, modest_skyscraper_color) {
     1: return PALETTE_NEWCC_CLASSIC_WHITE;
 }
 
-PALETTE_NEWSTRUCTS = reserve_sprites(5);
+PALETTE_NEWSTRUCTS = reserve_sprites(9);
 replace( PALETTE_NEWSTRUCTS ) {
     recolour_sprite {
         0x46: 0x01;
@@ -400,6 +400,27 @@ replace( PALETTE_NEWSTRUCTS ) {
         0x47: 0x20;
         0x48..0x4F: 0x20..0x27;
     }
+    recolour_sprite {
+        0x46: 0x01;
+        0x47..0x4F: 0x29..0x31;
+    }
+    recolour_sprite {
+        0x46: 0x01;
+        0x47: 0x60;
+        0x48: 0x60;
+        0x49..0x4F: 0x59..0x5F;
+    }
+    recolour_sprite {
+        0x46..0x48: 0x3C..0x3E;
+        0x49..0x4E: 0xC0..0xC5;
+        0x4F: 0x27;
+    }
+    recolour_sprite {
+        0x46: 0x01;
+        0x47: 0x02;
+        0x48: 0x03;
+        0x49..0x4F: 0x9A..0xA0;
+    }
 }
 
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_CRASH, (PALETTE_NEWSTRUCTS + 0)) { return ;}
@@ -407,6 +428,10 @@ switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_CREAM, (PALETTE_NEWSTRUCTS + 1)) { 
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_MAUVE, (PALETTE_NEWSTRUCTS + 2)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLACK, (PALETTE_NEWSTRUCTS + 3)) { return ;}
 switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BROWN, (PALETTE_NEWSTRUCTS + 4)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_PINK,  (PALETTE_NEWSTRUCTS + 5)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_GREEN, (PALETTE_NEWSTRUCTS + 6)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_ORANGE,(PALETTE_NEWSTRUCTS + 7)) { return ;}
+switch (FEAT_HOUSES, SELF, PALETTE_NEWSTRUCT_BLUE,  (PALETTE_NEWSTRUCTS + 8)) { return ;}
 
 random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_USE_DEFAULT;
@@ -422,6 +447,10 @@ random_switch (FEAT_HOUSES, SELF, random_struct_color) {
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BLACK;
     1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN;
+    1: return PALETTE_NEWSTRUCT_ORANGE;
+    1: return PALETTE_NEWSTRUCT_BLUE;
 }
 
 random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
@@ -434,6 +463,9 @@ random_switch (FEAT_HOUSES, SELF, random_modest_struct_color) {
     1: return PALETTE_NEWSTRUCT_CREAM;
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN;
+    1: return PALETTE_NEWSTRUCT_BLUE;
 }
 
 
@@ -947,6 +979,9 @@ random_switch (FEAT_HOUSES, SELF, modest_shops_and_offices_3_color) {
     1: return PALETTE_NEWSTRUCT_CREAM;
     1: return PALETTE_NEWSTRUCT_MAUVE;
     1: return PALETTE_NEWSTRUCT_BROWN;
+    1: return PALETTE_NEWSTRUCT_PINK;
+    1: return PALETTE_NEWSTRUCT_GREEN;
+    1: return PALETTE_NEWSTRUCT_BLUE;
 }
 
 if (enable_temperate) {
